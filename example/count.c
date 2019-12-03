@@ -4,6 +4,12 @@
 #include <glib.h>
 #include "../include/libstemmer.h"
 
+gboolean find_value(gpointer key, gpointer value, gpointer user_data){
+	char * d = user_data;
+	char * v = value;
+	if(strcmp(d,v)==0) return TRUE;
+	return FALSE;
+}
 void 
 print_counter (gpointer key, gpointer value, gpointer userdata) 
 {
@@ -12,6 +18,16 @@ print_counter (gpointer key, gpointer value, gpointer userdata)
 
 	if(key!=NULL&&value!=NULL){
 		printf("(%s, %d)\n", t, *d) ;
+	}
+}
+void 
+print_counter_string (gpointer key, gpointer value, gpointer userdata) 
+{
+	int * t = key ;
+	char * d = value ;
+
+	if(key!=NULL&&value!=NULL){
+		printf("(%d, %s)\n", *t, d) ;
 	}
 }
 gboolean remove_counter(gpointer key, gpointer value, gpointer user_data){
@@ -76,7 +92,6 @@ main ()
 	}
 
 	g_hash_table_foreach_remove(nCounter,remove_counter,0x0);
-//	g_hash_table_foreach(nCounter, print_counter, 0x0) ;
 	GList * list = g_hash_table_get_values(nCounter);
 	int total;
 	total=0;
@@ -87,8 +102,6 @@ main ()
 		i++;
 		total+=*temp;
 	}
-//	printf("%d\n",total);
-//	printf("bad: %d\n", *((int *) g_hash_table_lookup(nCounter, "bad"))) ;
 	fclose(nf);
 
 	GHashTable * pCounter = g_hash_table_new(g_str_hash, g_str_equal) ;		
@@ -133,7 +146,6 @@ main ()
 	}
 
 	g_hash_table_foreach_remove(pCounter,remove_counter,0x0);
-//	g_hash_table_foreach(pCounter, print_counter, 0x0) ;
 	GList * plist = g_hash_table_get_values(pCounter);
 	int ptotal;
 	ptotal=0;
@@ -144,7 +156,34 @@ main ()
 		pi++;
 		ptotal+=*temp;
 	}
-//	printf("%d\n",ptotal);
-//	printf("bad: %d\n", *((int *) g_hash_table_lookup(pCounter, "bad"))) ;
 	fclose(pf);
+	list=g_hash_table_get_keys(nCounter);
+	plist=g_hash_table_get_keys(pCounter);
+	GHashTable * kCounter = g_hash_table_new(g_str_hash,g_int_equal);
+	i=0;
+	while(1){
+		char* temp = g_list_nth_data(list,i);
+		if(temp==NULL) break;
+		int * d =malloc(sizeof(int));
+		*d=i;
+	//	char * d=malloc(sizeof(char)*12);
+	//	sprintf(d,"%d",i);
+		g_hash_table_insert(kCounter,d,strdup(temp));
+		i++;
+	}
+	pi=0;
+	while(1){
+		char * temp=g_list_nth_data(plist,pi);
+		if(temp==NULL) break;
+		pi++;
+		
+		int * d =malloc(sizeof(int));
+		*d=i;
+//		char * d=malloc(sizeof(char)*12);
+//		sprintf(d,"%d",i);
+		char * checkVal=g_hash_table_find(kCounter,find_value,temp);
+		if(checkVal==NULL) g_hash_table_insert(kCounter,d,strdup(temp));
+		i++;
+	}
+	g_hash_table_foreach(kCounter,print_counter_string,0x0);
 }
