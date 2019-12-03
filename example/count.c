@@ -185,5 +185,34 @@ main ()
 		if(checkVal==NULL) g_hash_table_insert(kCounter,d,strdup(temp));
 		i++;
 	}
-	g_hash_table_foreach(kCounter,print_counter_string,0x0);
+//	g_hash_table_foreach(kCounter,print_counter_string,0x0);
+	int num=0;
+	float nprob,pprob;
+	float prob;
+	int smoothing=10;
+	GList * klist = g_hash_table_get_values(kCounter);
+	while(1){
+		char*temp=g_list_nth_data(klist,num);
+		if(temp==NULL) break;
+
+		int *nNum;
+		int *pNum;
+		nNum=g_hash_table_lookup(nCounter,temp);
+		pNum=g_hash_table_lookup(pCounter,temp);
+		if(nNum==NULL){
+			nNum=malloc(sizeof(int));
+			*nNum=0;
+		}
+		if(pNum==NULL){
+			pNum=malloc(sizeof(int));
+			*pNum=0;
+		}
+		pprob=(float)(*pNum+smoothing)/(ptotal+smoothing*2);
+		nprob=(float)(*nNum+smoothing)/(total+smoothing*2);
+		prob=(nprob)/(nprob+pprob);
+		printf("%d %d %d %d %f %f %f\n",*nNum,*pNum,total,ptotal,nprob,pprob,prob);
+		num++;
+		free(nNum);
+		free(pNum);
+	}
 }
