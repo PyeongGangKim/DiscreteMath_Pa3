@@ -60,9 +60,6 @@ int main(){
 	line = 0x0 ;
     }
 
-    int negative = 0;
-    int non_negative = 0;
-    
     while(1){
 	char * in_feed;
 	in_feed = (char *)malloc(sizeof(char)*1000);
@@ -126,17 +123,10 @@ int main(){
 	double exp_p = exp(sum_p);
 	double exp_n = exp(sum_n);
 	double result = exp_n / (exp_p + exp_n);
-	char * str = (char*)malloc(sizeof(char)*20);
 	if(result > 0.964){
-	    strcpy(str,"negative");
-	    negative ++;
+	    printf("negative\n");
 	}else{
-	    strcpy(str,"non-negative");
-	    non_negative ++;
+	    printf("non-negative\n");
 	}
-	printf("( , %10lf, %s\n",result,str);
-
-	free(str);
     }
-    printf("negative : %d \n non-negative : %d \n",negative,non_negative);
 }

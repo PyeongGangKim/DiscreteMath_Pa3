@@ -1,102 +1,100 @@
-( ,   0.523244, non-negative
-( ,   0.519483, non-negative
-( ,   0.920489, non-negative
-( ,   0.312008, non-negative
-( ,   0.146448, non-negative
-( ,   0.864299, non-negative
-( ,   0.998929, negative
-( ,   0.720387, non-negative
-( ,   0.015252, non-negative
-( ,   0.980765, negative
-( ,   0.347182, non-negative
-( ,   0.217528, non-negative
-( ,   0.997497, negative
-( ,   0.557110, non-negative
-( ,   0.977992, negative
-( ,   0.097251, non-negative
-( ,   0.057654, non-negative
-( ,   0.906113, non-negative
-( ,   0.270629, non-negative
-( ,   0.179577, non-negative
-( ,   0.865545, non-negative
-( ,   0.718249, non-negative
-( ,   0.566371, non-negative
-( ,   0.087963, non-negative
-( ,   0.941929, non-negative
-( ,   0.701458, non-negative
-( ,   0.500000, non-negative
-( ,   0.139709, non-negative
-( ,   0.005442, non-negative
-( ,   0.033961, non-negative
-( ,   0.918492, non-negative
-( ,   0.423127, non-negative
-( ,   0.999896, negative
-( ,   0.998933, negative
-( ,   0.680559, non-negative
-( ,   0.544082, non-negative
-( ,   0.974628, negative
-( ,   0.899153, non-negative
-( ,   0.996083, negative
-( ,   0.402244, non-negative
-( ,   0.710881, non-negative
-( ,   0.802460, non-negative
-( ,   0.359952, non-negative
-( ,   0.316333, non-negative
-( ,   0.567673, non-negative
-( ,   0.370732, non-negative
-( ,   0.318305, non-negative
-( ,   0.125155, non-negative
-( ,   0.079297, non-negative
-( ,   0.589932, non-negative
-( ,   0.960331, non-negative
-( ,   0.064245, non-negative
-( ,   0.988184, negative
-( ,   0.999864, negative
-( ,   0.999249, negative
-( ,   0.600344, non-negative
-( ,   0.995177, negative
-( ,   0.397439, non-negative
-( ,   0.963312, non-negative
-( ,   0.561905, non-negative
-( ,   0.947588, non-negative
-( ,   0.726332, non-negative
-( ,   0.987084, negative
-( ,   0.887864, non-negative
-( ,   0.990802, negative
-( ,   0.000219, non-negative
-( ,   0.328017, non-negative
-( ,   0.459769, non-negative
-( ,   0.000003, non-negative
-( ,   0.453348, non-negative
-( ,   0.293943, non-negative
-( ,   0.397283, non-negative
-( ,   0.027360, non-negative
-( ,   0.591500, non-negative
-( ,   0.940284, non-negative
-( ,   0.609508, non-negative
-( ,   0.264489, non-negative
-( ,   0.894553, non-negative
-( ,   0.693803, non-negative
-( ,   0.500000, non-negative
-( ,   0.735711, non-negative
-( ,   0.865168, non-negative
-( ,   0.021500, non-negative
-( ,   0.376774, non-negative
-( ,   0.500000, non-negative
-( ,   0.108861, non-negative
-( ,   0.210130, non-negative
-( ,   0.739271, non-negative
-( ,   0.000003, non-negative
-( ,   0.037518, non-negative
-( ,   0.001589, non-negative
-( ,   0.983226, negative
-( ,   0.500008, non-negative
-( ,   0.307980, non-negative
-( ,   0.058560, non-negative
-( ,   0.863143, non-negative
-( ,   0.191859, non-negative
-( ,   0.971419, negative
-( ,   0.315603, non-negative
-( ,   0.612423, non-negative
-negative : 16 
- non-negative : 84 
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+negative
+non-negative
+non-negative
+negative
+non-negative
+non-negative
+negative
+non-negative
+negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+negative
+negative
+non-negative
+non-negative
+negative
+non-negative
+negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+negative
+negative
+negative
+non-negative
+negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+negative
+non-negative
+negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+negative
+non-negative
+non-negative
+non-negative
+non-negative
+non-negative
+negative
+non-negative
+non-negative
