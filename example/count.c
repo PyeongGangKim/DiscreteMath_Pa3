@@ -34,7 +34,7 @@ gboolean remove_Ncounter(gpointer key, gpointer value, gpointer user_data){
 	char * t = key;
 	int * d = value;
 
-	if(*d<=5 || *d>=900){
+	if(*d<=9){
 		free(key);
 		free(value);
 		return TRUE;
@@ -46,7 +46,7 @@ gboolean remove_Pcounter(gpointer key, gpointer value, gpointer user_data){
 	char * t = key;
 	int * d = value;
 
-	if(*d<=5 || *d>=400){
+	if(*d<=5){
 		free(key);
 		free(value);
 		return TRUE;
@@ -234,6 +234,8 @@ main ()
 			pNum=malloc(sizeof(int));
 			*pNum=0;
 		}
+		if(*nNum>900)*nNum=900;
+		if(*pNum>500)*pNum=500;
 		pprob=(float)(*pNum+smoothing)/(5565+smoothing*2);
 		nprob=(float)(*nNum+smoothing)/(9078+smoothing*2);
 		//prob=(nprob)/(nprob+pprob);
