@@ -2,7 +2,7 @@
 
 What does this program do?
 
-This is a Naive Bayes Text Classifier which get a message as input. This program classify whether input is negative or non-negative. 
+- This is a Naive Bayes Text Classifier which get a message as input. This program classify whether input is negative or non-negative. 
 
 How to complie & execute
 
