@@ -31,9 +31,6 @@ gboolean remove_counter(gpointer key, gpointer value, gpointer user_data){
 int main(){
     GHashTable* negativeTable = g_hash_table_new(g_str_hash,g_str_equal);
     GHashTable* nonNegativeTable = g_hash_table_new(g_str_hash,g_str_equal);
-    GHashTable* inputNTable = g_hash_table_new(g_str_hash,g_str_equal);
-    GHashTable* inputNNTable = g_hash_table_new(g_str_hash,g_str_equal);
-    GHashTable* sentenceProbTable = g_hash_table_new(g_str_hash,g_str_equal);
 
     struct sb_stemmer * stemmer;
     stemmer = sb_stemmer_new("english",0x0);
@@ -62,6 +59,9 @@ int main(){
 	free(_line) ;
 	line = 0x0 ;
     }
+
+    int negative = 0;
+    int non_negative = 0;
     
     while(1){
 	char * in_feed;
@@ -123,14 +123,20 @@ int main(){
 	    }
 	}
     // receive input, and torkenazate the sentense, and push into negative, nonnegative table keys and values.    
-	double exp_p = exp(sum_p), exp_n = exp(sum_n);
+	double exp_p = exp(sum_p);
+	double exp_n = exp(sum_n);
 	double result = exp_n / (exp_p + exp_n);
-//   printf("%.20lf\n",prob_e);
+	char * str = (char*)malloc(sizeof(char)*20);
+	if(result > 0.964){
+	    strcpy(str,"negative");
+	    negative ++;
+	}else{
+	    strcpy(str,"non-negative");
+	    non_negative ++;
+	}
+	printf("( , %10lf, %s\n",result,str);
 
-	char * str = (char*)malloc(sizeof(char)*10);
-	sprintf(str,"%.5lf",result);
-
-	g_hash_table_insert(sentenceProbTable,in_feed,str);
+	free(str);
     }
-    g_hash_table_foreach(sentenceProbTable,print_counter,0x0);
+    printf("negative : %d \n non-negative : %d \n",negative,non_negative);
 }
