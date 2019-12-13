@@ -34,7 +34,7 @@ gboolean remove_Ncounter(gpointer key, gpointer value, gpointer user_data){
 	char * t = key;
 	int * d = value;
 
-	if(*d<=5 || *d>=500){
+	if(*d<=5 || *d>=900){
 		free(key);
 		free(value);
 		return TRUE;
@@ -46,7 +46,7 @@ gboolean remove_Pcounter(gpointer key, gpointer value, gpointer user_data){
 	char * t = key;
 	int * d = value;
 
-	if(*d<=5 || *d>=900){
+	if(*d<=5 || *d>=500){
 		free(key);
 		free(value);
 		return TRUE;
