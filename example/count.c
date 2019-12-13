@@ -30,7 +30,7 @@ print_counter_string (gpointer key, gpointer value, gpointer userdata)
 		printf("(%d, %s)\n", *t, d) ;
 	}
 }
-gboolean remove_counter(gpointer key, gpointer value, gpointer user_data){
+gboolean remove_Ncounter(gpointer key, gpointer value, gpointer user_data){
 	char * t = key;
 	int * d = value;
 
@@ -42,6 +42,17 @@ gboolean remove_counter(gpointer key, gpointer value, gpointer user_data){
 	return FALSE;
 }
 
+gboolean remove_Pcounter(gpointer key, gpointer value, gpointer user_data){
+	char * t = key;
+	int * d = value;
+
+	if(*d<=5 || *d>=900){
+		free(key);
+		free(value);
+		return TRUE;
+	}
+	return FALSE;
+}
 int 
 main () 
 {
@@ -94,7 +105,7 @@ main ()
 //Tokenization-Negative Sentences
 
 
-	g_hash_table_foreach_remove(nCounter,remove_counter,0x0);
+	g_hash_table_foreach_remove(nCounter,remove_Ncounter,0x0);
 	GList * list = g_hash_table_get_values(nCounter);
 	int total;
 	total=0;
@@ -154,7 +165,7 @@ main ()
 //Tokenization-Positive Sentences
 
 
-	g_hash_table_foreach_remove(pCounter,remove_counter,0x0);
+	g_hash_table_foreach_remove(pCounter,remove_Pcounter,0x0);
 	GList * plist = g_hash_table_get_values(pCounter);
 	int ptotal;
 	ptotal=0;
