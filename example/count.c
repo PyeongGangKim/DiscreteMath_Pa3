@@ -223,8 +223,8 @@ main ()
 			pNum=malloc(sizeof(int));
 			*pNum=0;
 		}
-		pprob=(float)(*pNum+smoothing)/(ptotal+smoothing*2);
-		nprob=(float)(*nNum+smoothing)/(total+smoothing*2);
+		pprob=(float)(*pNum+smoothing)/(5565+smoothing*2);
+		nprob=(float)(*nNum+smoothing)/(9078+smoothing*2);
 		//prob=(nprob)/(nprob+pprob);
 		fprintf(cf,"%s,%f,%f\n",temp,nprob,pprob);
 		num++;
